@@ -14,6 +14,11 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 # Modify default IP
 #修改默认 IP为192.168.50.5
 sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+
+# Modify default SSID
+#修改默认 SSID为RT-ACRH17
+sed -i 's/OpenWrt/RT-N16/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
 #取消bootstrap为默认主题
 #sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 #删除默认密码
