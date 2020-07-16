@@ -19,6 +19,11 @@ sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_genera
 #修改默认 SSID为RT-ACRH17
 sed -i 's/OpenWrt/RT-N16/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
+# Modify default wifi 低速率 MU-MIMO 剔除
+#修改默认 
+sed -i '/country/a \\t\t\tset wireless.radio${devidx}.legacy_rates=0 \n \t\t\tset wireless.radio${devidx}.txpower=20' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/ssid/a \\t\t\tset wireless.default_radio${devidx}.disassoc_low_ack=0' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
 #取消bootstrap为默认主题
 #sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 #删除默认密码
