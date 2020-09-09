@@ -36,4 +36,12 @@ sed -i '/ssid/a \\t\t\tset wireless.default_radio${devidx}.disassoc_low_ack=0' p
 
 #添加主题
 #git clone https://github.com/sypopo/luci-theme-atmaterial.git package/luci-theme-atmaterial
+git clone https://github.com/jerrykuku/luci-theme-argon.git       #取消注释下载最新的argon主题
 git clone https://github.com/Leo-Jo-My/luci-theme-opentomato.git package/luci-theme-opentomato
+
+#添加额外软件包
+git clone https://github.com/cnzd/luci-app-koolproxyR.git package        #去广告最新KPR
+git clone https://github.com/xiaorouji/openwrt-package.git xiaorouji     #常用软件集合包
+git clone https://github.com/kenzok8/openwrt-packages.git                #常用软件集合包二
+git clone https://github.com/destan19/OpenAppFilter.git                  #APP过滤应用
+
